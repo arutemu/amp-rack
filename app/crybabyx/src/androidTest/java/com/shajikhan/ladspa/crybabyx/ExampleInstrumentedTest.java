@@ -1,4 +1,4 @@
-package com.shajikhan.ladspa.crybabyx;
+package com.mukuro.ladspa.crybabyx;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.shajikhan.ladspa.crybabyx.test", appContext.getPackageName());
+        assertEquals("com.mukuro.ladspa.crybabyx.test", appContext.getPackageName());
     }
 }

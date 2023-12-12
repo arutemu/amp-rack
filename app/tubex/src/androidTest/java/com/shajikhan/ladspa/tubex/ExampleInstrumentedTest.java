@@ -1,4 +1,4 @@
-package com.shajikhan.ladspa.tubex;
+package com.mukuro.ladspa.tubex;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.shajikhan.ladspa.tubex.test", appContext.getPackageName());
+        assertEquals("com.mukuro.ladspa.tubex.test", appContext.getPackageName());
     }
 }

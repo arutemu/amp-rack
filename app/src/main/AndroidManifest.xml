@@ -67,7 +67,7 @@
             android:theme="@style/Theme.AmpRack">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.shajikhan.ladspa.amprack.MainActivity" />
+                android:value="com.mukuro.ladspa.amprack.MainActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -76,7 +76,7 @@
             android:theme="@style/Theme.AmpRack">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.shajikhan.ladspa.amprack.MainActivity" />
+                android:value="com.mukuro.ladspa.amprack.MainActivity" />
         </activity>
         <activity
             android:name=".FirebaseUI"
@@ -99,7 +99,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.shajikhan.ladspa.amprack.fileprovider"
+            android:authorities="com.mukuro.ladspa.amprack.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

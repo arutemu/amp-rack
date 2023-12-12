@@ -12,7 +12,7 @@ static Engine * engine = nullptr;
 
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_shajikhan_ladspa_amprack_MainActivity_stringFromJNI(
+Java_com_mukuro_ladspa_amprack_MainActivity_stringFromJNI(
         JNIEnv* env,
         jobject /* this */) {
     std::string hello = "Hello from C++";
@@ -21,7 +21,7 @@ Java_com_shajikhan_ladspa_amprack_MainActivity_stringFromJNI(
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_create(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_create(JNIEnv *env, jclass clazz) {
     IN ;
     if (engine == nullptr) {
         engine = new Engine () ;
@@ -34,7 +34,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_create(JNIEnv *env, jclass clazz) 
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_isAAudioRecommended(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_isAAudioRecommended(JNIEnv *env, jclass clazz) {
     if (engine == nullptr) {
         LOGE(
                 "Engine is null, you must call createEngine "
@@ -46,7 +46,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_isAAudioRecommended(JNIEnv *env, j
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setAPI(JNIEnv *env, jclass clazz, jint api_type) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_setAPI(JNIEnv *env, jclass clazz, jint api_type) {
     if (engine == nullptr) {
         LOGE(
                 "Engine is null, you must call createEngine "
@@ -71,7 +71,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setAPI(JNIEnv *env, jclass clazz, 
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setEffectOn(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setEffectOn(JNIEnv *env, jclass clazz,
                                                         jboolean is_effect_on) {
     if (engine == nullptr) {
         LOGE(
@@ -90,7 +90,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setEffectOn(JNIEnv *env, jclass cl
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setRecordingDeviceId(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setRecordingDeviceId(JNIEnv *env, jclass clazz,
                                                                  jint device_id) {
     if (engine == nullptr) {
         LOGE(
@@ -106,7 +106,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setRecordingDeviceId(JNIEnv *env, 
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setPlaybackDeviceId(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setPlaybackDeviceId(JNIEnv *env, jclass clazz,
                                                                 jint device_id) {
     if (engine == nullptr) {
         LOGE(
@@ -122,7 +122,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setPlaybackDeviceId(JNIEnv *env, j
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_delete(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_delete(JNIEnv *env, jclass clazz) {
     if (engine) {
         engine->setEffectOn(false);
         delete engine;
@@ -132,7 +132,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_delete(JNIEnv *env, jclass clazz) 
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_native_1setDefaultStreamValues(JNIEnv *env,
+Java_com_mukuro_ladspa_amprack_AudioEngine_native_1setDefaultStreamValues(JNIEnv *env,
                                                                            jclass clazz,
                                                                            jint default_sample_rate,
                                                                            jint default_frames_per_burst) {
@@ -143,14 +143,14 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_native_1setDefaultStreamValues(JNI
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setMode(JNIEnv *env, jclass clazz, jint mode) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_setMode(JNIEnv *env, jclass clazz, jint mode) {
     // TODO: implement setMode()
     if (engine == nullptr) return ;
     LOGD("setting mode to %d", mode) ;
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getSharedLibraries(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getSharedLibraries(JNIEnv *env, jclass clazz) {
     // TODO: implement getSharedLibraries()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -160,7 +160,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getSharedLibraries(JNIEnv *env, jc
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getPlugins(JNIEnv *env, jclass clazz, jint library) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getPlugins(JNIEnv *env, jclass clazz, jint library) {
     // TODO: implement getPlugins()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -170,7 +170,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getPlugins(JNIEnv *env, jclass cla
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginControls(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getPluginControls(JNIEnv *env, jclass clazz,
                                                                 jint plugin) {
     // TODO: implement getPluginControls()
     if (engine == NULL) {
@@ -181,7 +181,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginControls(JNIEnv *env, jcl
 }
 extern "C"
 JNIEXPORT jfloatArray JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginControlValues(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getPluginControlValues(JNIEnv *env, jclass clazz,
                                                                      jint plugin, jint control) {
     // TODO: implement getPluginControlValues()
     if (engine == NULL) {
@@ -198,7 +198,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginControlValues(JNIEnv *env
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_addPlugin(JNIEnv *env, jclass clazz, jint library,
+Java_com_mukuro_ladspa_amprack_AudioEngine_addPlugin(JNIEnv *env, jclass clazz, jint library,
                                                         jint plugin) {
     // TODO: implement addPlugin()
     if (engine == NULL) {
@@ -211,7 +211,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_addPlugin(JNIEnv *env, jclass claz
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_deletePlugin(JNIEnv *env, jclass clazz, jint plugin) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_deletePlugin(JNIEnv *env, jclass clazz, jint plugin) {
     // TODO: implement deletePlugin()
     IN
     LOGD("Deleting plugin at position %d", plugin);
@@ -224,7 +224,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_deletePlugin(JNIEnv *env, jclass c
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setPluginControl(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setPluginControl(JNIEnv *env, jclass clazz,
                                                                jint plugin, jint control,
                                                                jfloat value) {
     // TODO: implement setPluginControl()
@@ -253,7 +253,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setPluginControl(JNIEnv *env, jcla
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_movePlugin(JNIEnv *env, jclass clazz, jint plugin,
+Java_com_mukuro_ladspa_amprack_AudioEngine_movePlugin(JNIEnv *env, jclass clazz, jint plugin,
                                                          jint position) {
     // TODO: implement movePlugin()
     LOGF("%s UNIMPLEMENTED", __PRETTY_FUNCTION__ );
@@ -262,7 +262,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_movePlugin(JNIEnv *env, jclass cla
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_togglePlugin(JNIEnv *env, jclass clazz, jint plugin,
+Java_com_mukuro_ladspa_amprack_AudioEngine_togglePlugin(JNIEnv *env, jclass clazz, jint plugin,
                                                            jboolean state) {
     // TODO: implement togglePlugin()
     if (engine == NULL) {
@@ -276,7 +276,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_togglePlugin(JNIEnv *env, jclass c
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getLibraryName(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getLibraryName(JNIEnv *env, jclass clazz,
                                                              jint library) {
     // TODO: implement getLibraryName()
     if (engine == NULL) {
@@ -287,7 +287,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getLibraryName(JNIEnv *env, jclass
 }
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginName(JNIEnv *env, jclass clazz, jint library,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getPluginName(JNIEnv *env, jclass clazz, jint library,
                                                             jint plugin) {
     // TODO: implement getPluginName()
     if (engine == NULL) {
@@ -298,7 +298,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginName(JNIEnv *env, jclass 
 }
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getActivePluginName(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getActivePluginName(JNIEnv *env, jclass clazz,
                                                                   jint plugin) {
     // TODO: implement getActivePluginName()
     if (engine == NULL) {
@@ -318,7 +318,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getActivePluginName(JNIEnv *env, j
 }
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getControlName(JNIEnv *env, jclass clazz, jint plugin,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getControlName(JNIEnv *env, jclass clazz, jint plugin,
                                                              jint control) {
     // TODO: implement getControlName()
     if (engine == NULL) {
@@ -333,7 +333,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getControlName(JNIEnv *env, jclass
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_loadLibrary(JNIEnv *env, jclass clazz, jstring filename) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_loadLibrary(JNIEnv *env, jclass clazz, jstring filename) {
     // TODO: implement loadLibrary()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -349,7 +349,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_loadLibrary(JNIEnv *env, jclass cl
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_loadPlugins(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_loadPlugins(JNIEnv *env, jclass clazz) {
     // TODO: implement loadPlugins()
     IN
     if (engine == NULL) {
@@ -367,7 +367,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_loadPlugins(JNIEnv *env, jclass cl
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_debugInfo(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_debugInfo(JNIEnv *env, jclass clazz) {
     // TODO: implement debugInfo()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -384,7 +384,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_debugInfo(JNIEnv *env, jclass claz
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_movePluginDown(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_movePluginDown(JNIEnv *env, jclass clazz,
                                                              jint plugin) {
     // TODO: implement movePluginDown()
     engine -> mFullDuplexPass.bypass = true ;
@@ -395,7 +395,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_movePluginDown(JNIEnv *env, jclass
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_movePluginUp(JNIEnv *env, jclass clazz, jint plugin) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_movePluginUp(JNIEnv *env, jclass clazz, jint plugin) {
     // TODO: implement movePluginUp()
     engine -> mFullDuplexPass.bypass = true ;
     int res = engine ->moveActivePluginUp(plugin);
@@ -404,7 +404,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_movePluginUp(JNIEnv *env, jclass c
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setExternalStoragePath(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setExternalStoragePath(JNIEnv *env, jclass clazz,
                                                                      jstring path) {
     // TODO: implement setExternalStoragePath()
     IN ;
@@ -421,7 +421,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setExternalStoragePath(JNIEnv *env
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setRecordingActive(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setRecordingActive(JNIEnv *env, jclass clazz,
                                                                  jboolean active) {
     // TODO: implement setRecordingActive()
     if (engine == NULL) {
@@ -434,7 +434,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setRecordingActive(JNIEnv *env, jc
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_addPluginByName(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_addPluginByName(JNIEnv *env, jclass clazz,
                                                               jstring name) {
     // TODO: implement addPluginByName()
     const char *nativeString = env->GetStringUTFChars(name, 0);
@@ -444,7 +444,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_addPluginByName(JNIEnv *env, jclas
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setPresetValue(JNIEnv *env, jclass clazz, jint plugin,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setPresetValue(JNIEnv *env, jclass clazz, jint plugin,
                                                              jint control, jfloat value) {
     // TODO: implement setPresetValue()
     if (engine == NULL) {
@@ -466,7 +466,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setPresetValue(JNIEnv *env, jclass
 }
 extern "C"
 JNIEXPORT jfloat JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginPresetValue(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getPluginPresetValue(JNIEnv *env, jclass clazz,
                                                                    jint plugin, jint control) {
     // TODO: implement getPluginPresetValue()
     if (engine == NULL) {
@@ -478,7 +478,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginPresetValue(JNIEnv *env, 
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setExportFormat(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setExportFormat(JNIEnv *env, jclass clazz,
                                                               jint format) {
     // TODO: implement setExportFormat()
         if (engine == NULL) {
@@ -490,7 +490,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setExportFormat(JNIEnv *env, jclas
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_clearActiveQueue(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_clearActiveQueue(JNIEnv *env, jclass clazz) {
     // TODO: implement clearActiveQueue()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -502,14 +502,14 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_clearActiveQueue(JNIEnv *env, jcla
 }
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getRecordingFileName(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getRecordingFileName(JNIEnv *env, jclass clazz) {
     // TODO: implement getRecordingFileName()
     LOGD("%s", engine->fileWriter->filename.c_str());
     return env ->NewStringUTF(engine->fileWriter->filename.c_str());
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setLowLatency(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setLowLatency(JNIEnv *env, jclass clazz,
                                                             jboolean low_latency) {
     // TODO: implement setLowLatency()
     if (engine == NULL) {
@@ -524,7 +524,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setLowLatency(JNIEnv *env, jclass 
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setSampleRate(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setSampleRate(JNIEnv *env, jclass clazz,
                                                             jint sample_rate) {
     // TODO: implement setSampleRate()
     if (engine == NULL) {
@@ -536,7 +536,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setSampleRate(JNIEnv *env, jclass 
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setOpusBitRate(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setOpusBitRate(JNIEnv *env, jclass clazz,
                                                              jint bitrate) {
     // TODO: implement setOpusBitRate()
     if (engine == NULL) {
@@ -548,7 +548,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setOpusBitRate(JNIEnv *env, jclass
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getTotalPlugins(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getTotalPlugins(JNIEnv *env, jclass clazz) {
     // TODO: implement getTotalPlugins()
     if (engine == NULL) return 0;
 
@@ -563,7 +563,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getTotalPlugins(JNIEnv *env, jclas
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_wasLowLatency(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_wasLowLatency(JNIEnv *env, jclass clazz) {
     // TODO: implement wasLowLatency()
     if (engine == NULL) return false;
 
@@ -571,7 +571,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_wasLowLatency(JNIEnv *env, jclass 
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginUniqueID(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getPluginUniqueID(JNIEnv *env, jclass clazz,
                                                                 jint library, jint plugin) {
     // TODO: implement getPluginUniqueID()
     if (engine == NULL) {
@@ -582,7 +582,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getPluginUniqueID(JNIEnv *env, jcl
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getActivePlugins(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getActivePlugins(JNIEnv *env, jclass clazz) {
     // TODO: implement getActivePlugins()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -592,7 +592,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getActivePlugins(JNIEnv *env, jcla
 }
 extern "C"
 JNIEXPORT jfloatArray JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getActivePluginValues(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_getActivePluginValues(JNIEnv *env, jclass clazz,
                                                                     jint plugin) {
     // TODO: implement getActivePluginValues()
     if (engine == NULL) {
@@ -614,7 +614,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getActivePluginValues(JNIEnv *env,
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setLazyLoad(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setLazyLoad(JNIEnv *env, jclass clazz,
                                                           jboolean lazy_load) {
     // TODO: implement setLazyLoad()
     // so finally i learnt this!
@@ -622,7 +622,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setLazyLoad(JNIEnv *env, jclass cl
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_addPluginLazy(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_addPluginLazy(JNIEnv *env, jclass clazz,
                                                             jstring library, jint plugin) {
     // TODO: implement addPluginLazy()
     if (engine == NULL) return -1 ;
@@ -634,7 +634,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_addPluginLazy(JNIEnv *env, jclass 
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_testLV2(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_testLV2(JNIEnv *env, jclass clazz) {
     // TODO: implement testLV2()
 //    engine ->loadPlugin("rkrlv2.so", SharedLibrary::LV2);
 //    engine -> libraries.at(0)->load();
@@ -648,7 +648,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_testLV2(JNIEnv *env, jclass clazz)
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setLibraryPath(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setLibraryPath(JNIEnv *env, jclass clazz,
                                                              jstring path) {
     // TODO: implement setLibraryPath()
     IN
@@ -665,7 +665,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setLibraryPath(JNIEnv *env, jclass
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_addPluginLazyLV2(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_addPluginLazyLV2(JNIEnv *env, jclass clazz,
                                                                jstring library, jint plugin) {
     // TODO: implement addPluginLazyLV2()
     if (engine == NULL) return -1 ;
@@ -677,7 +677,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_addPluginLazyLV2(JNIEnv *env, jcla
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setInputVolume(JNIEnv *env, jclass clazz, jfloat volume) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_setInputVolume(JNIEnv *env, jclass clazz, jfloat volume) {
     // TODO: implement setVolume()
     IN
     if (engine == NULL) {
@@ -689,7 +689,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setInputVolume(JNIEnv *env, jclass
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setOutputVolume(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setOutputVolume(JNIEnv *env, jclass clazz,
                                                               jfloat volume) {
     // TODO: implement setOutputVolume()
     IN
@@ -699,7 +699,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setOutputVolume(JNIEnv *env, jclas
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_toggleMixer(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_toggleMixer(JNIEnv *env, jclass clazz,
                                                           jboolean toggle) {
     // TODO: implement toggleMixer()
     if (engine == NULL) return ;
@@ -708,7 +708,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_toggleMixer(JNIEnv *env, jclass cl
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_printActiveChain(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_printActiveChain(JNIEnv *env, jclass clazz) {
     // TODO: implement printActiveChain()
     IN
     if (engine == NULL) return ;
@@ -722,13 +722,13 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_printActiveChain(JNIEnv *env, jcla
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_bypass(JNIEnv *env, jclass clazz, jboolean state) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_bypass(JNIEnv *env, jclass clazz, jboolean state) {
     // TODO: implement bypass()
     engine == NULL ?  LOGE("[%s] engine is null !", __PRETTY_FUNCTION__ ) :   engine -> mFullDuplexPass.bypass = state ;
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_toggleRecording(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_toggleRecording(JNIEnv *env, jclass clazz,
                                                               jboolean state) {
     // TODO: implement toggleRecording()
     engine == NULL ?  LOGE("[%s] engine is null !", __PRETTY_FUNCTION__ ) : engine -> mFullDuplexPass.recordingActive = state ;
@@ -741,7 +741,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_toggleRecording(JNIEnv *env, jclas
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setFileName(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setFileName(JNIEnv *env, jclass clazz,
                                                           jstring file_name) {
     // TODO: implement setFileName()
     const char *nativeString = env->GetStringUTFChars(file_name, 0);
@@ -751,7 +751,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_setFileName(JNIEnv *env, jclass cl
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getSampleRate(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getSampleRate(JNIEnv *env, jclass clazz) {
     // TODO: implement getSampleRate()
     // TODO: implement setSampleRate()
     if (engine == NULL) {
@@ -764,7 +764,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getSampleRate(JNIEnv *env, jclass 
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_getTunerEnabled(JNIEnv *env, jclass clazz) {
+Java_com_mukuro_ladspa_amprack_AudioEngine_getTunerEnabled(JNIEnv *env, jclass clazz) {
     // TODO: implement getTunerEnabled()
     if (engine == NULL) {
         LOGF ("engine is NULL");
@@ -775,7 +775,7 @@ Java_com_shajikhan_ladspa_amprack_AudioEngine_getTunerEnabled(JNIEnv *env, jclas
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_shajikhan_ladspa_amprack_AudioEngine_setTunerEnabled(JNIEnv *env, jclass clazz,
+Java_com_mukuro_ladspa_amprack_AudioEngine_setTunerEnabled(JNIEnv *env, jclass clazz,
                                                               jboolean enabled) {
     // TODO: implement setTunerEnabled()
         if (engine == NULL) {

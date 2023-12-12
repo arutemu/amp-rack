@@ -241,7 +241,7 @@ std::string Plugin::getLV2JSON (std::string pluginName) {
     jstring jstr1 = env->NewStringUTF(pluginName.c_str());
     jstring libname = env->NewStringUTF(sharedLibrary->so_file.c_str());
 
-    jclass clazz = env->FindClass("com/shajikhan/ladspa/amprack/MainActivity");
+    jclass clazz = env->FindClass("com/mukuro/ladspa/amprack/MainActivity");
     if (clazz == nullptr) {
         HERE LOGF("cannot find class!");
     }

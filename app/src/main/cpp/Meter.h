@@ -93,7 +93,7 @@ public:
             envOutput = getEnv();
             if (envOutput == nullptr)
                 LOGF("envOutput is null");
-            mainActivityOutput = findClassWithEnv(envOutput, "com/shajikhan/ladspa/amprack/MainActivity");
+            mainActivityOutput = findClassWithEnv(envOutput, "com/mukuro/ladspa/amprack/MainActivity");
             if (mainActivityOutput == nullptr) {
                 HERE
                 LOGF("cannot find class mainactivityOutput!");
@@ -144,7 +144,7 @@ public:
             env = getEnv();
             if (env == nullptr)
                 LOGF("env is null");
-            mainActivity = findClassWithEnv(env, "com/shajikhan/ladspa/amprack/MainActivity");
+            mainActivity = findClassWithEnv(env, "com/mukuro/ladspa/amprack/MainActivity");
             if (mainActivity == nullptr) {
                 HERE
                 LOGF("cannot find class mainactivity!");

@@ -10,7 +10,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.shajikhan.ladspa.amprack"
+        applicationId "com.mukuro.ladspa.amprack"
         minSdk 24
         targetSdk 33
         versionCode 70
@@ -79,7 +79,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
-    namespace 'com.shajikhan.ladspa.amprack'
+    namespace 'com.mukuro.ladspa.amprack'
 }
 
 dependencies {

@@ -34,7 +34,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'com.shajikhan.ladspa.tubex'
+    namespace 'com.mukuro.ladspa.tubex'
 }
 
 dependencies {

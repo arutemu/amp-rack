@@ -361,9 +361,9 @@ void Engine::discoverPlugins () {
     libraries.push_back(sharedLibrary1);
     SharedLibrary * sharedLibrary2 = new SharedLibrary ("libcrybabyx.so");
     libraries.push_back(sharedLibrary2);
-    SharedLibrary * sharedLibrary3 = new SharedLibrary ("/data/data/com.shajikhan.ladspa.amprack/lib/libtubex.so");
+    SharedLibrary * sharedLibrary3 = new SharedLibrary ("/data/data/com.mukuro.ladspa.amprack/lib/libtubex.so");
     libraries.push_back(sharedLibrary3);
-    SharedLibrary * sharedLibrary4 = new SharedLibrary ("/data/data/com.shajikhan.ladspa.plugins.tap/lib/libtap_eq.so");
+    SharedLibrary * sharedLibrary4 = new SharedLibrary ("/data/data/com.mukuro.ladspa.plugins.tap/lib/libtap_eq.so");
     libraries.push_back(sharedLibrary4);
     OUT
 }

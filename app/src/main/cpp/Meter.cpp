@@ -50,7 +50,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *pjvm, void *reserved) {
     gJvm = pjvm;  // cache the JavaVM pointer
     auto env = getEnv();
     //replace with one of your classes in the line below
-    auto randomClass = env->FindClass("com/shajikhan/ladspa/amprack/MainActivity");
+    auto randomClass = env->FindClass("com/mukuro/ladspa/amprack/MainActivity");
     jclass classClass = env->GetObjectClass(randomClass);
     auto classLoaderClass = env->FindClass("java/lang/ClassLoader");
     auto getClassLoaderMethod = env->GetMethodID(classClass, "getClassLoader",
@@ -126,7 +126,7 @@ void Meter::enable () {
     }
 //    vm-> GetEnv((void**)&env, JNI_VERSION_1_6);
     /*
-    mainActivity = env->FindClass("com/shajikhan/ladspa/amprack/MainActivity");
+    mainActivity = env->FindClass("com/mukuro/ladspa/amprack/MainActivity");
     if (mainActivity == nullptr) {
         HERE LOGF("cannot find class mainactivity!");
     }

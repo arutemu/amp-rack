@@ -1,4 +1,4 @@
-package com.shajikhan.ladspa.amp;
+package com.mukuro.ladspa.amp;
 
 public class NativeLib {
 

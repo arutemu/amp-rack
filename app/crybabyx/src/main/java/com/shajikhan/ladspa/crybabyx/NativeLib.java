@@ -1,4 +1,4 @@
-package com.shajikhan.ladspa.crybabyx;
+package com.mukuro.ladspa.crybabyx;
 
 public class NativeLib {
 

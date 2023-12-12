@@ -1,4 +1,4 @@
-package com.shajikhan.ladspa.tubex;
+package com.mukuro.ladspa.tubex;
 
 import org.junit.Test;
 

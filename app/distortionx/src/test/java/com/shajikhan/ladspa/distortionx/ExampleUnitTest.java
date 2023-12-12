@@ -1,4 +1,4 @@
-package com.shajikhan.ladspa.distortionx;
+package com.mukuro.ladspa.distortionx;
 
 import org.junit.Test;
 
