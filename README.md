@@ -3,6 +3,7 @@ The original app is available here https://github.com/djshaji/amp-rack
 
 Huge thanks to [@djshaji](https://github.com/djshaji) for all the work he've done!
 
+***
 
 ## Original app description (to be updated as soon as there are finished changes):
 ### Amp Rack Audio Effects Processor / LADSPA Host for Android
