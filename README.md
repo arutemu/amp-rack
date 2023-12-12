@@ -1,3 +1,10 @@
+### This is my attempt to modify, update and improve the UI of the open-source app Amp Rack
+The original app is available here https://github.com/djshaji/amp-rack
+
+Huge thanks to [@djshaji](https://github.com/djshaji) for all the work he've done!
+
+
+## Original app description (to be updated as soon as there are finished changes):
 ### Amp Rack Audio Effects Processor / LADSPA Host for Android
 <a href='https://play.google.com/store/apps/details?id=mukuro.ladspa.amprack&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width=150 alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
