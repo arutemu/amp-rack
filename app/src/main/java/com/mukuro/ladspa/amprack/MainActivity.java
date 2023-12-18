@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
     ToggleButton toggleMixer;
     static int totalPlugins = 0;
-    static boolean useTheme = true;
+    static boolean useTheme = false;
     String theme = "TubeAmp";
     String customTheme = null ;
     static SkinEngine skinEngine = null;
@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
         Log.d(TAG, "onCreate: showOn: " + showOn);
 
-        theme = defaultSharedPreferences.getString("theme", "TubeAmp");
+        theme = defaultSharedPreferences.getString("theme", "Material"); // Changed default from TubeAmp to Material
 //        customTheme = defaultSharedPreferences.getString("custom_theme", null);
         String themeOnboarded = intentMain.getStringExtra("theme");
         if (themeOnboarded != null)
